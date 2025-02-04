@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: apps-multiple-source-application
+spec:
+  destination:
+    name: in-cluster
+    namespace: argocd
+  source:
+    path: applications
+    repoURL: https://github.com/kingsleyzikora/demo-dev.git
+    targetRevision: HEAD
+    directory: {}
+  project: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
