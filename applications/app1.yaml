@@ -5,19 +5,19 @@ metadata:
   namespace: argocd
 spec:
   destination:
-    namespace: prod
+    namespace: prometheus-node-exporter
     name: kind
   project: default
   sources:
     # Chart from Chart Repo
-    - chart: hello-world
-      repoURL: https://helm.github.io/examples
+    - chart: prometheus-node-exporter
+      repoURL: https://github.com/prometheus-community/helm-charts/
       targetRevision: 0.1.0
       helm:
         valueFiles:
         - $values/multiple-source-application/values-app1.yaml
     # Values from Git
-    - repoURL: 'https://github.com/morey-tech/argo-cd-helm-values-demo'
+    - repoURL: 'https://github.com/kingsleyzikora/demo-dev.git'
       targetRevision: HEAD
       ref: values
   syncPolicy:
