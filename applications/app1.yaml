@@ -15,7 +15,7 @@ spec:
       targetRevision: 0.1.0
       helm:
         valueFiles:
-        - $values/multiple-source-application/values-app1.yaml
+        - $values/application/values-app1.yaml
     # Values from Git
     - repoURL: 'https://github.com/kingsleyzikora/demo-dev.git'
       targetRevision: HEAD
